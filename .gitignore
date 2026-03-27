@@ -1,0 +1,12 @@
+# Misc
+.DS_Store
+*.tmp
+*.docx
+corporate_info.txt
+.gemini/
+.agent/
+.agents/
+.git/
+node_modules/
+package-lock.json
+manifest.json.tmp

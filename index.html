@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templaven C.A. | Vidrio Templado Industrial y Arquitectónico</title>
+    <meta name="description" content="Más de 45 años fabricando e instalando vidrio templado industrial y arquitectónico en Venezuela. CNC, templado térmico, instalación profesional. Zona Industrial III, Barquisimeto.">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ══════════════ STICKY HEADER ══════════════ -->
+    <header class="glass">
+        <a href="#inicio" class="logo">
+            <img src="assets/logo.png" alt="Templaven C.A." id="site-logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#ia">Experiencia IA</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#trayectoria">Trayectoria</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ══════════════ 1. HERO — Scroll-Scrub ══════════════ -->
+    <div id="hero-scroll-track" class="hero-scroll-track">
+        <section id="inicio" class="hero hero-canvas-section">
+            <canvas id="hero-canvas"></canvas>
+            <div id="hero-manifest-error" class="hero-manifest-error" style="display:none;">
+                ⚠️ No se encontró el manifest de fotogramas.<br>
+                <code>frames/manifest.json</code> debe existir en el servidor.
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Precisión que Protege,<br>Innovación que Transforma</h1>
+                <p>Más de 45 años siendo el referente en vidrio templado y cerramientos arquitectónicos de alta gama en Venezuela.</p>
+                <a href="https://wa.me/584245891620" class="btn btn-primary" target="_blank">
+                    Contactar a un Asesor &nbsp;<i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="scroll-hint">
+                <span>Scroll</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ══════════════ 2. EXPERIENCIA IA ══════════════ -->
+    <section id="ia" class="ai-simulator">
+        <div class="section-title fade-in-up">
+            <h2>Visualiza tu <span>Proyecto</span></h2>
+            <p>Sube una foto de tu espacio. Nuestra IA integrará el vidrio templado con precisión milimétrica, simulando acabados y refractividad real.</p>
+        </div>
+
+        <div class="simulator-container">
+            <!-- Controls -->
+            <div class="controls-panel fade-in-up">
+                <div class="glass-card" style="padding:25px; margin-bottom:20px;">
+                    <h3><i class="fa-solid fa-wand-magic-sparkles" style="color:var(--templaven-light-blue)"></i> Diseñador Virtual IA</h3>
+                    <p style="font-size:.9rem;color:#a0a0a0;margin-top:10px;">
+                        <strong style="color:#ccc">Paso a paso:</strong><br>
+                        1. Selecciona el tipo de instalación.<br>
+                        2. Elige el acabado del vidrio.<br>
+                        3. Arrastra o haz clic en la zona derecha para subir tu foto.<br>
+                        4. Espera 3 segundos y tu espacio aparecerá con el vidrio integrado.<br>
+                        5. Usa el botón de abajo para solicitar presupuesto exacto.
+                    </p>
+                </div>
+
+                <div class="selector-group">
+                    <h4>1. Tipo de Instalación</h4>
+                    <div class="btn-group">
+                        <button class="btn-select active">Puerta Automática</button>
+                        <button class="btn-select">Fachada / Cerramiento</button>
+                        <button class="btn-select">Barandas</button>
+                        <button class="btn-select">División de Baño</button>
+                    </div>
+                </div>
+
+                <div class="selector-group">
+                    <h4>2. Acabado del Vidrio</h4>
+                    <div class="btn-group">
+                        <button class="btn-select active">Transparente</button>
+                        <button class="btn-select">Esmerilado</button>
+                        <button class="btn-select">Reflectivo</button>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/584245891620?text=Hola%20Templaven%2C%20quiero%20un%20presupuesto%20para%20mi%20proyecto%20de%20vidrio%20templado." class="btn btn-primary" style="text-align:center;margin-top:20px;" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> &nbsp;Solicitar Presupuesto
+                </a>
+            </div>
+
+            <!-- Upload Zone -->
+            <div class="upload-area fade-in-up">
+                <!-- Hidden real file input -->
+                <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp" style="display:none;">
+                <div class="upload-zone" id="upload-zone">
+                    <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                    <h3>Arrastra tu imagen aquí</h3>
+                    <p style="color:#888;">o <span style="color:var(--templaven-light-blue);cursor:pointer;text-decoration:underline;" id="browse-link">haz clic para buscar</span> (JPG, PNG, WEBP)</p>
+                    <div class="result-mockup" id="result-mockup"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════ 3. SERVICIOS (Flip Cards) ══════════════ -->
+    <section id="servicios">
+        <div class="section-title fade-in-up">
+            <h2>Cadena de Valor <span>Integrada</span></h2>
+            <p>Transformamos cristal flotado en soluciones arquitectónicas de seguridad bajo normas COVENIN. Pasa el cursor sobre cada tarjeta.</p>
+        </div>
+
+        <div class="services-grid">
+
+            <!-- Card 1: CNC -->
+            <div class="flip-card fade-in-up">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front glass-card">
+                        <div class="service-icon"><i class="fa-solid fa-cubes-stacked"></i></div>
+                        <h3>Corte CNC Automatizado</h3>
+                        <p>Mesas de corte de precisión milimétrica (Control Numérico por Computadora) para dimensiones exactas minimizando el desperdicio.</p>
+                        <span class="flip-hint">Ver proceso <i class="fa-solid fa-rotate"></i></span>
+                    </div>
+                    <div class="flip-card-back" style="background-image:url('assets/svc-cnc.jpg')">
+                        <div class="flip-back-overlay">
+                            <h3>Tecnología CNC</h3>
+                            <p>Tolerancias de ±0.5 mm en cada corte. Ideal para proyectos arquitectónicos complejos que exigen reproducibilidad exacta en volumen.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Rectilíneo -->
+            <div class="flip-card fade-in-up">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front glass-card">
+                        <div class="service-icon"><i class="fa-solid fa-border-all"></i></div>
+                        <h3>Procesamiento Rectilíneo</h3>
+                        <p>Pulido de cantos que evita microfisuras y garantiza un acabado premium para aplicaciones "Todo Visión".</p>
+                        <span class="flip-hint">Ver proceso <i class="fa-solid fa-rotate"></i></span>
+                    </div>
+                    <div class="flip-card-back" style="background-image:url('assets/svc-rectilinea.jpg')">
+                        <div class="flip-back-overlay">
+                            <h3>Acabado Brillante</h3>
+                            <p>El pulido elimina microfisuras pre-templado, aumentando la tasa de rendimiento y asegurando bordes seguros al tacto en aplicaciones visibles.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Perforación -->
+            <div class="flip-card fade-in-up">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front glass-card">
+                        <div class="service-icon"><i class="fa-solid fa-circle-notch"></i></div>
+                        <h3>Perforación y Muescas</h3>
+                        <p>Mecanizado de precisión para integración estructural de herrajes, garantizando resistencia donde el vidrio tolera carga.</p>
+                        <span class="flip-hint">Ver proceso <i class="fa-solid fa-rotate"></i></span>
+                    </div>
+                    <div class="flip-card-back" style="background-image:url('assets/svc-perforacion.jpg')">
+                        <div class="flip-back-overlay">
+                            <h3>Precisión Milimétrica</h3>
+                            <p>Broca de diamante industrial con refrigeración de agua. Distancias normadas desde borde, muescas para cerraduras y escotaduras para anclajes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Templado -->
+            <div class="flip-card fade-in-up">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front glass-card">
+                        <div class="service-icon"><i class="fa-solid fa-fire"></i></div>
+                        <h3>Templado Térmico (650°C)</h3>
+                        <p>Tratamiento de enfriamiento rápido que genera compresiones superficiales: 5x más resistente que el vidrio convencional.</p>
+                        <span class="flip-hint">Ver proceso <i class="fa-solid fa-rotate"></i></span>
+                    </div>
+                    <div class="flip-card-back" style="background-image:url('assets/svc-templado.jpg')">
+                        <div class="flip-back-overlay">
+                            <h3>650°C → Vidrio de Seguridad</h3>
+                            <p>Horno horizontal de rodillos. Al romperse, fragmenta en trozos granulares romos (norma COVENIN) protegiéndote de astillas peligrosas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: Instalación -->
+            <div class="flip-card fade-in-up">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front glass-card">
+                        <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h3>Instalación Profesional</h3>
+                        <p>Técnicos certificados que aseguran hermeticidad, nivelación y funcionalidad desde puertas bancarias hasta barandas.</p>
+                        <span class="flip-hint">Ver instalación <i class="fa-solid fa-rotate"></i></span>
+                    </div>
+                    <div class="flip-card-back" style="background-image:url('assets/gallery-real-1.jpg')">
+                        <div class="flip-back-overlay">
+                            <h3>Servicio Llave en Mano</h3>
+                            <p>Medición in-situ, sellado con silicona estructural, nivelación láser y supervisión experta incluida. Garantía de producto e instalación.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══════════════ 4. TRAYECTORIA ══════════════ -->
+    <section id="trayectoria" class="history-section">
+        <div class="counters-grid fade-in-up">
+            <div class="counter-box glass-card">
+                <h3 data-target="45">0</h3>
+                <p>Años de Trayectoria</p>
+            </div>
+            <div class="counter-box glass-card">
+                <h3 data-target="10000">0</h3>
+                <p>Instalaciones Seguras</p>
+            </div>
+            <div class="counter-box glass-card">
+                <h3 data-target="5">0</h3>
+                <p>Veces más Resistente</p>
+            </div>
+            <div class="counter-box glass-card">
+                <h3 data-target="100">0</h3>
+                <p>% Norma COVENIN</p>
+            </div>
+        </div>
+
+        <div class="section-title fade-in-up">
+            <h2>Portafolio <span>Arquitectónico</span></h2>
+            <p>Proyectos emblemáticos en instalaciones comerciales, residenciales y bancarias en Venezuela.</p>
+        </div>
+
+        <div class="portfolio-grid fade-in-up">
+            <div class="portfolio-item">
+                <img src="assets/portfolio-1.jpg" alt="Fachada Comercial Todo Visión">
+                <div class="portfolio-overlay"><h4>Fachada Comercial "Todo Visión"</h4></div>
+            </div>
+            <div class="portfolio-item">
+                <img src="assets/svc-cnc.jpg" alt="Maquinaria CNC de perforación">
+                <div class="portfolio-overlay"><h4>Maquinaria CNC — Planta Templaven</h4></div>
+            </div>
+            <div class="portfolio-item">
+                <img src="assets/svc-perforacion.jpg" alt="Perforación con broca de diamante">
+                <div class="portfolio-overlay"><h4>Perforación Industrial de Precisión</h4></div>
+            </div>
+            <div class="portfolio-item">
+                <img src="assets/portfolio-2.jpg" alt="División de Baño Slider">
+                <div class="portfolio-overlay"><h4>Sistema Ducha Slider Alta Gama</h4></div>
+            </div>
+            <div class="portfolio-item">
+                <img src="assets/portfolio-3.jpg" alt="Puertas Bancarias">
+                <div class="portfolio-overlay"><h4>Puertas Automáticas de Seguridad</h4></div>
+            </div>
+            <div class="portfolio-item">
+                <img src="assets/portfolio-4.jpg" alt="Barandas Estructurales">
+                <div class="portfolio-overlay"><h4>Barandas Estructurales</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════ 5. CONTACTO ══════════════ -->
+    <section id="contacto">
+        <div class="section-title fade-in-up">
+            <h2>Asesoría <span>Técnica Especializada</span></h2>
+            <p>Déjanos tus datos o comunícate directamente con nuestro equipo de ingenieros.</p>
+        </div>
+
+        <div class="contact-container fade-in-up">
+            <div class="contact-info">
+                <div class="info-item glass-card" style="padding:20px;">
+                    <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <h4>Sede Operativa</h4>
+                        <p>Zona Industrial III, Barquisimeto<br>Estado Lara, Venezuela</p>
+                    </div>
+                </div>
+                <div class="info-item glass-card" style="padding:20px;">
+                    <div class="info-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div>
+                        <h4>Atención Directa</h4>
+                        <p><a href="https://wa.me/584245891620" target="_blank" style="color:#25D366">+58 424 589 1620</a></p>
+                    </div>
+                </div>
+                <div class="info-item glass-card" style="padding:20px;">
+                    <div class="info-icon"><i class="fa-brands fa-instagram"></i></div>
+                    <div>
+                        <h4>Redes Sociales</h4>
+                        <p><a href="https://www.instagram.com/templaven/" target="_blank">@templaven</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card contact-form">
+                <h3>Cotiza tu Proyecto</h3>
+                <form id="contact-form" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <input type="text" id="form-name" placeholder="Nombre / Empresa" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="form-tel" placeholder="Teléfono / WhatsApp" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="form-type">
+                            <option value="">Tipo de proyecto...</option>
+                            <option value="Puertas Automáticas / Bancarias">Puertas Automáticas / Bancarias</option>
+                            <option value="Divisiones de Baño / Residencial">Divisiones de Baño / Residencial</option>
+                            <option value="Fachadas / Cerramientos Comerciales">Fachadas / Cerramientos Comerciales</option>
+                            <option value="Barandas de Seguridad">Barandas de Seguridad</option>
+                            <option value="Otro">Otro (Especificar)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="form-msg" placeholder="Cuéntanos sobre medidas y especificaciones..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%">
+                        <i class="fa-brands fa-whatsapp"></i> &nbsp;Enviar por WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <img src="assets/logo.png" alt="Templaven" style="height:40px;opacity:.6;margin-bottom:12px;">
+        <p>&copy; 2026 Templaven C.A. Todos los derechos reservados. | Zona Industrial III, Barquisimeto, Venezuela.</p>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/584245891620" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
