@@ -22,7 +22,7 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
     // A) Load manifest
     let framePaths = [];
     try {
-        const res = await fetch('/frames/manifest.json');
+        const res = await fetch('frames/manifest.json');
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         framePaths = await res.json();
         if (!Array.isArray(framePaths) || framePaths.length === 0) throw new Error('Empty manifest');
